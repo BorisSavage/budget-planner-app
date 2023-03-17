@@ -54,14 +54,6 @@ const AddExpenseModal = ({ show, handleClose, defaultBudgetId }) => {
         amountRef.current.value = null;
     };
 
-    const handleCloseAndResetSelect = () => {
-        handleClose();
-        // setSelectedBudgetOption({
-        //     value: UNCATEGORIZED_BUDGET_ID,
-        //     label: "Uncategorized",
-        // });
-    };
-
     const customStyles = {
         control: (baseStyles, state) => ({
             ...baseStyles,
@@ -87,7 +79,7 @@ const AddExpenseModal = ({ show, handleClose, defaultBudgetId }) => {
 
     return (
         <>
-            <Backdrop show={show} handleClose={handleCloseAndResetSelect} />
+            <Backdrop show={show} handleClose={handleClose} />
             <div
                 className={
                     "fixed inset-x-3.5 top-3.5 mx-auto max-w-lg transition duration-500 ease-savage-sig-2 lg:inset-x-0 lg:top-[33.3%] lg:left-[50%] lg:mx-0 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:duration-[250ms] " +
@@ -107,7 +99,7 @@ const AddExpenseModal = ({ show, handleClose, defaultBudgetId }) => {
                                 New Expense
                             </h1>
                             <button
-                                onClick={handleCloseAndResetSelect}
+                                onClick={handleClose}
                                 type="button"
                                 className="rounded-lg bg-neutral-100/50 px-3 font-medium text-black ring-2 ring-amber-100 transition duration-[500ms] ease-savage-sig-2 hover:ring hover:ring-amber-200 hover:drop-shadow-lg"
                             >
