@@ -56,10 +56,10 @@ const AddExpenseModal = ({ show, handleClose, defaultBudgetId }) => {
 
     const handleCloseAndResetSelect = () => {
         handleClose();
-        setSelectedBudgetOption({
-            value: UNCATEGORIZED_BUDGET_ID,
-            label: "Uncategorized",
-        });
+        // setSelectedBudgetOption({
+        //     value: UNCATEGORIZED_BUDGET_ID,
+        //     label: "Uncategorized",
+        // });
     };
 
     const customStyles = {

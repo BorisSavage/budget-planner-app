@@ -45,10 +45,10 @@ function App() {
                             return (
                                 <div
                                     key={budget.id}
-                                    className={`inline-block w-full py-2 px-2 align-top md:w-1/2 ${
+                                    className={`w-full py-2 px-2 align-top md:w-1/2 ${
                                         isLast && budgets.length % 2 !== 0
-                                            ? "md:block"
-                                            : ""
+                                            ? "block"
+                                            : "inline-block"
                                     }`}
                                 >
                                     <BudgetCard

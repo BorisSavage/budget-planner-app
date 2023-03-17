@@ -38,23 +38,12 @@ const ViewExpensesModal = ({ budgetId, handleClose }) => {
             >
                 <div className="rounded-lg bg-gradient-to-b from-amber-50 via-white to-indigo-50 p-2 shadow-lg sm:p-5">
                     <div className="m-2 grid grid-cols-1 gap-3">
-                        <div className="flex items-baseline justify-between transition-none">
+                        <div className="flex items-center justify-between transition-none">
                             <div>
-                                <h1 className="mb-2 text-xl font-bold">
+                                <h1 className="mb-2 mr-4 text-xl font-bold">
                                     Expenses
                                     {budget?.name && " - " + budget.name}
                                 </h1>
-                                {budgetId !== UNCATEGORIZED_BUDGET_ID && (
-                                    <button
-                                        onClick={() => {
-                                            deleteBudget(budget);
-                                            handleClose();
-                                        }}
-                                        className="rounded-lg border border-red-300 px-3 text-neutral-600 transition duration-[700ms] ease-savage-sig-2 hover:border-red-600 hover:text-red-600 hover:shadow-lg"
-                                    >
-                                        Delete Budget
-                                    </button>
-                                )}
                             </div>
                             <button
                                 onClick={handleClose}
@@ -64,6 +53,17 @@ const ViewExpensesModal = ({ budgetId, handleClose }) => {
                                 Close
                             </button>
                         </div>
+                        {budgetId !== UNCATEGORIZED_BUDGET_ID && (
+                            <button
+                                onClick={() => {
+                                    deleteBudget(budget);
+                                    handleClose();
+                                }}
+                                className="ml-0 mr-auto rounded-lg border border-red-300 px-3 text-neutral-600 transition duration-[700ms] ease-savage-sig-2 hover:border-red-600 hover:text-red-600 hover:shadow-lg"
+                            >
+                                Delete Budget
+                            </button>
+                        )}
                         <div ref={parent} className="my-2">
                             {budgetExpenses.map((expense) => {
                                 return (

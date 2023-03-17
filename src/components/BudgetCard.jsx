@@ -26,13 +26,16 @@ const BudgetCard = ({
                     classNames.join(" ")
                 }
             >
-                <div className="mb-3 flex items-baseline justify-between font-medium">
-                    <div className="mr-2 text-xl">{name}</div>
+                <div className="mb-3 flex items-center justify-between font-medium">
+                    <div className="mr-4 text-left text-2xl sm:truncate">
+                        {name}
+                    </div>
+
                     <div className="flex items-baseline text-xl">
                         {currencyFormatter.format(amount)}&nbsp;
                         {max && (
                             <span className="text-sm text-neutral-500">
-                                / {currencyFormatter.format(max)}
+                                /&nbsp;{currencyFormatter.format(max)}
                             </span>
                         )}
                     </div>
